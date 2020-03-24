@@ -36,3 +36,10 @@ class HomePage(models.Model):
 class HomeModel(models.Model):
     "Generated Model"
     home_field = models.BigIntegerField()
+
+
+class TestFK(models.Model):
+    "Generated Model"
+    fktest = models.ForeignKey(
+        "home.CustomText", on_delete=models.CASCADE, related_name="testfk_fktest",
+    )
